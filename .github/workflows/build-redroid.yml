@@ -51,15 +51,15 @@ jobs:
           cd /builder
           sudo /bin/mv ${{ github.workspace }}/* .
           ls -alh
-          chmod +x ./builder/1download_asop.sh
-          ./builder/1download_asop.sh
+          sudo chmod +x ./builder/1download_asop.sh
+          sudo ./builder/1download_asop.sh
 
       - name: build docker
         working-directory: /builder
         run: |
           cd /builder
-          chmod +x ./builder/2build_docker.sh
-          ./builder/2build_docker.sh
+          sudo chmod +x ./builder/2build_docker.sh
+          sudo ./builder/2build_docker.sh
 
       - name: build asop
         working-directory: /builder
