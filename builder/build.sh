@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
 apt-get install -qq -y ca-certificates
