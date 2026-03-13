@@ -48,7 +48,7 @@ jobs:
       - name: to /bilder
         working-directory: /builder
         run: |
-          sudo /bin/mv -a ${{ github.workspace }}/* .
+          sudo /bin/mv ${{ github.workspace }}/* .
           ls -alh
 
       - name: Setup tmate session
