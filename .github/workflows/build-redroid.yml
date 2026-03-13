@@ -55,11 +55,11 @@ jobs:
           sudo ./builder/1download_asop.sh
 
       - name: build docker
-        working-directory: /builder
+        working-directory: /builder/builder
         run: |
-          cd /builder
-          sudo chmod +x ./builder/2build_docker.sh
-          sudo ./builder/2build_docker.sh
+          cd /builder/builder
+          sudo chmod +x ./builder/builder/2build_docker.sh
+          sudo ./builder/builder/2build_docker.sh
 
       - name: build asop
         working-directory: /builder
