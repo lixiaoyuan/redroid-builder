@@ -49,17 +49,17 @@ jobs:
         working-directory: /builder
         run: |
           cd /builder
-          sudo /bin/mv ${{ github.workspace }}/* .
+          sudo /bin/mv ${{ github.workspace }}/builder/* .
           ls -alh
-          sudo chmod +x ./builder/1download_asop.sh
-          sudo ./builder/1download_asop.sh
+          sudo chmod +x ./1download_asop.sh
+          sudo ./1download_asop.sh
 
       - name: build docker
-        working-directory: /builder/builder
+        working-directory: /builder
         run: |
-          cd /builder/builder
-          sudo chmod +x ./builder/builder/2build_docker.sh
-          sudo ./builder/builder/2build_docker.sh
+          cd /builder
+          sudo chmod +x ./builder/2build_docker.sh
+          sudo ./builder/2build_docker.sh
 
       - name: build asop
         working-directory: /builder
@@ -69,13 +69,13 @@ jobs:
           --privileged \
           --cap-add SYS_ADMIN \
           -v /builder:/workspace \
-          -v /builder/redroid/redroid:/src \
+          -v /builder/redroid:/src \
           -w /workspace \
           redroid-builder \
           bash -c "
-            cd /workspace/builder ;
-            chmod +x /workspace/builder/3build_redroid_indocker.sh ;
-            /workspace/builder/3build_redroid_indocker.sh
+            cd /workspace ;
+            chmod +x /workspace/3build_redroid_indocker.sh ;
+            /workspace/3build_redroid_indocker.sh
           "
 
       - name: Setup tmate session
