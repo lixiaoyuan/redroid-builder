@@ -49,6 +49,7 @@ jobs:
         working-directory: /builder
         run: |
           pwd
+          sudo /bin/cp -a ${{ github.workspace }}/* .
           ls -alh
           sudo docker run --rm \
             --privileged \
@@ -57,7 +58,6 @@ jobs:
             -w /workspace \
             ubuntu:22.04 \
             bash -c "
-              ls -alh
               chmod +x /workspace/build.sh ;
               /workspace/build.sh
             "
