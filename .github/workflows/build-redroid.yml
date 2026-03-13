@@ -58,6 +58,6 @@ jobs:
             -w /workspace \
             ubuntu:22.04 \
             bash -c "
-              chmod +x /workspace/build.sh ;
-              /workspace/build.sh
+              chmod +x /workspace/builder/build.sh ;
+              /workspace/builder/build.sh
             "
