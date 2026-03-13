@@ -7,10 +7,13 @@ apt-get install -qq -y ca-certificates
 apt-get install -qq -y --no-install-recommends \
     curl
 
+mkdir -p ~/bin
+PATH=~/bin:$PATH
+
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 
-mkdir -p /workspace/builder/redroid && cd mkdir /workspace/builder/redroid
+mkdir -p /workspace/builder/redroid && cd /workspace/builder/redroid
 
 # check supported branch in https://github.com/remote-android/redroid-patches.git
 repo init -u https://android.googlesource.com/platform/manifest --git-lfs --depth=1 -b android-11.0.0_r48
