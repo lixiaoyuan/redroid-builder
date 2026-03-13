@@ -45,6 +45,9 @@ jobs:
           sudo chown -R runner.runner /builder
           df -Th
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+ 
       - name: Run build in Ubuntu 22.04 container
         working-directory: /builder
         run: |
