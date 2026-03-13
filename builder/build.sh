@@ -30,6 +30,9 @@ apt-get install -qq -y --no-install-recommends \
 mkdir -p ~/bin
 PATH=~/bin:$PATH
 
+git config --global user.email "lixiaoyuan52@gmail.com"
+git config --global user.name "lixy"
+
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 
@@ -45,8 +48,12 @@ repo init -u https://android.googlesource.com/platform/manifest --git-lfs --dept
 # add local manifests
 git clone https://github.com/remote-android/local_manifests.git ${redroid_dir}/.repo/local_manifests -b 11.0.0
 
+echo 'sync -c'
+
 # sync code
 repo sync -c
+
+echo 'apply redroid patches'
 
 # apply redroid patches
 git clone https://github.com/remote-android/redroid-patches.git $redroid_patch_dir
