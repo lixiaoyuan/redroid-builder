@@ -5,6 +5,11 @@ export DEBIAN_FRONTEND=noninteractive
 mkdir -p ~/bin
 PATH=~/bin:$PATH
 
+apt-get update
+apt-get install -qq -y ca-certificates
+apt-get install -qq -y --no-install-recommends \
+    libxml2-utils
+
 git config --global user.email "lixiaoyuan52@gmail.com"
 git config --global user.name "lixy"
 
@@ -33,5 +38,3 @@ echo 'apply redroid patches'
 # apply redroid patches
 git clone https://github.com/remote-android/redroid-patches.git $redroid_patch_dir
 ${redroid_patch_dir}/apply-patch.sh ${redroid_dir}
-
-echo '输出的内容'

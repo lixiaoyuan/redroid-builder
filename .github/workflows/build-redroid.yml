@@ -45,14 +45,38 @@ jobs:
           sudo chown -R runner.runner /builder
           df -Th
 
-      - name: to /bilder
+      - name: download asop
         working-directory: /builder
         run: |
           cd /builder
           sudo /bin/mv ${{ github.workspace }}/* .
           ls -alh
-          chmod +x ./builder/build.sh
-          ./builder/build.sh
+          chmod +x ./builder/1download_asop.sh
+          ./builder/1download_asop.sh
+
+      - name: build docker
+        working-directory: /builder
+        run: |
+          cd /builder
+          chmod +x ./builder/2build_docker.sh
+          ./builder/2build_docker.sh
+
+      - name: build asop
+        working-directory: /builder
+        run: |
+          cd /builder
+          sudo docker run --rm \
+          --privileged \
+          --cap-add SYS_ADMIN \
+          -v /builder:/workspace \
+          -v /builder/redroid:/src \
+          -w /workspace \
+          redroid-builder \
+          bash -c "
+            cd /workspace/builder ;
+            chmod +x /workspace/builder/3build_redroid_indocker.sh ;
+            /workspace/builder/3build_redroid_indocker.sh
+          "
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
