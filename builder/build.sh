@@ -25,7 +25,7 @@ apt-get install -qq -y --no-install-recommends \
   python-is-python3 qemu-user-static rar rdfind rename rsync sed \
   squashfs-tools swig tar tree u-boot-tools udev unzip util-linux uuid \
   uuid-dev uuid-runtime vim wget whiptail xfsprogs xsltproc xxd xz-utils \
-  zip zlib1g-dev zstd binwalk ripgrep sudo openssh-client
+  zip zlib1g-dev zstd binwalk ripgrep sudo openssh-client libxml2-utils
 
 mkdir -p ~/bin
 PATH=~/bin:$PATH
