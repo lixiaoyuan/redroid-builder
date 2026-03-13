@@ -69,7 +69,7 @@ jobs:
           --privileged \
           --cap-add SYS_ADMIN \
           -v /builder:/workspace \
-          -v /builder/redroid:/src \
+          -v /builder/redroid/redroid:/src \
           -w /workspace \
           redroid-builder \
           bash -c "
