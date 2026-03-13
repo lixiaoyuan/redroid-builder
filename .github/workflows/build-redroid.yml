@@ -48,24 +48,11 @@ jobs:
       - name: to /bilder
         working-directory: /builder
         run: |
+          cd /builder
           sudo /bin/mv ${{ github.workspace }}/* .
           ls -alh
+          chmod +x build.sh
+          ./build.sh
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
- 
-      - name: Run build in Ubuntu 22.04 container
-        working-directory: /builder
-        run: |
-          pwd
-          sudo docker run --rm \
-            --privileged \
-            --cap-add SYS_ADMIN \
-            -v /builder:/workspace \
-            -w /workspace \
-            ubuntu:22.04 \
-            bash -c "
-              cd /workspace/builder ;
-              chmod +x /workspace/builder/build.sh ;
-              /workspace/builder/build.sh
-            "
