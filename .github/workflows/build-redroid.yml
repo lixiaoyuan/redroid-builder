@@ -51,8 +51,8 @@ jobs:
           cd /builder
           sudo /bin/mv ${{ github.workspace }}/* .
           ls -alh
-          chmod +x build.sh
-          ./build.sh
+          chmod +x ./builder/build.sh
+          ./builder/build.sh
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
