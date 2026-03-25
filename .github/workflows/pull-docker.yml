@@ -45,7 +45,7 @@ jobs:
           sudo chown -R runner.runner /builder
           df -Th
 
-      - name: download asop
+      - name: pull image
         working-directory: /builder
         run: |
           cd /builder
