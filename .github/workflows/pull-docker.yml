@@ -44,3 +44,12 @@ jobs:
           sudo mount /dev/github/runner /builder
           sudo chown -R runner.runner /builder
           df -Th
+
+      - name: download asop
+        working-directory: /builder
+        run: |
+          cd /builder
+          sudo /bin/mv ${{ github.workspace }}/builder/* .
+          ls -alh
+          sudo chmod +x ./pull-docker-image.sh
+          sudo ./pull-docker-image.sh
