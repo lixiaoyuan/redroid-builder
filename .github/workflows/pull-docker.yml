@@ -56,8 +56,8 @@ jobs:
       - name: Upload to Release
         uses: ncipollo/release-action@main
         with:
-          tag: pull images
-          artifacts: /builder/*.tar.gz
+          tag: pull-images
+          artifacts: /builder/release/*
           allowUpdates: true
           removeArtifacts: false
           replacesArtifacts: true
