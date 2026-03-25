@@ -53,3 +53,13 @@ jobs:
           ls -alh
           sudo chmod +x ./pull-docker-image.sh
           sudo ./pull-docker-image.sh
+      - name: Upload to Release
+        uses: ncipollo/release-action@main
+        with:
+          tag: pull images
+          artifacts: /builder/*.tar.gz
+          allowUpdates: true
+          removeArtifacts: false
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: 从docker hub 下载的 镜像
