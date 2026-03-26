@@ -24,9 +24,9 @@ jobs:
           - img_name: erstt/redroid:15.0.0_ndk_magisk_AVD
             img_tg_name: redroid_15_0_0_ndk_magisk_AVD.tar.gz
           - img_name: redroid/redroid:13.0.0-latest
-            img_tag_name: redroid_13_0_0_latest.tar.gz
+            img_tg_name: redroid_13_0_0_latest.tar.gz
           - img_name: redroid/redroid:9.0.0-latest
-            img_tag_name: redroid_9_0_0_latest.tar.gz
+            img_tg_name: redroid_9_0_0_latest.tar.gz
     steps:
       - name: Checkout
         uses: actions/checkout@v4
