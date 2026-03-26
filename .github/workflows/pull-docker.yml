@@ -13,6 +13,14 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - img_name: redroid/redroid:11.0.0-latest
+            img_tg_name: redroid_11_0_0_latest.tar.gz
+          - img_name: redroid/redroid:12.0.0-latest
+            img_tg_name: redroid_12_0_0_latest.tar.gz
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -54,7 +62,7 @@ jobs:
           sudo /bin/mv ${{ github.workspace }}/builder/* .
           ls -alh
           sudo chmod +x ./pull-docker-image.sh
-          sudo ./pull-docker-image.sh
+          sudo ./pull-docker-image.sh ${{ matrix.img_name }} ${{ matrix.img_tg_name }}
       - name: Upload to Release
         uses: ncipollo/release-action@main
         with:
