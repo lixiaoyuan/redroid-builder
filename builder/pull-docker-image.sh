@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "1==>>>> $0  $1"
+
 docker pull --platform linux/arm64 erstt/redroid:15.0.0_ndk_magisk_AVD
 
 docker images
