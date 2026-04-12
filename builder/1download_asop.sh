@@ -5,6 +5,11 @@ export DEBIAN_FRONTEND=noninteractive
 mkdir -p ~/bin
 PATH=~/bin:$PATH
 
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+
+echo "$HOME/bin" >> $GITHUB_PATH
+
 apt-get update
 apt-get install -qq -y ca-certificates
 apt-get install -qq -y --no-install-recommends \
