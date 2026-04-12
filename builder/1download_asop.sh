@@ -20,7 +20,9 @@ git config --global user.email "lixiaoyuan52@gmail.com"
 git config --global user.name "lixy"
 
 mkdir ${WORKDIR}/redroid && cd ${WORKDIR}/redroid
+echo "repo init"
 repo init -u https://github.com/redroid-rockchip/platform_manifests.git -b redroid-12.0.0 --depth=1 --git-lfs
+echo "repo init"
 repo sync -c
 
 ls -alh ./
