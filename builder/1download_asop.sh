@@ -14,7 +14,7 @@ apt-get update
 apt-get install -qq -y ca-certificates
 apt-get install -qq -y --no-install-recommends \
     libxml2-utils
-apt install docker.io repo git-lfs    
+apt install repo git-lfs    
 
 git config --global user.email "lixiaoyuan52@gmail.com"
 git config --global user.name "lixy"
