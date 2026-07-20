@@ -7,7 +7,7 @@ if [ -z "$1" ] || [ -z "$2" ]; then
 fi
 
 echo "开始拉取镜像: $1"
-docker pull --platform linux/arm64 "$1"
+docker pull "$1"
 
 echo "当前本地镜像列表:"
 docker images
