@@ -17,20 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - img_name: redroid/redroid:11.0.0-latest
-            img_tg_name: redroid_11_0_0_latest.tar.gz
-          - img_name: redroid/redroid:12.0.0-latest
-            img_tg_name: redroid_12_0_0_latest.tar.gz
-          - img_name: erstt/redroid:15.0.0_ndk_magisk_AVD
-            img_tg_name: redroid_15_0_0_ndk_magisk_AVD.tar.gz
-          - img_name: redroid/redroid:13.0.0-latest
-            img_tg_name: redroid_13_0_0_latest.tar.gz
-          - img_name: redroid/redroid:9.0.0-latest
-            img_tg_name: redroid_9_0_0_latest.tar.gz
-          - img_name: cnflysky/redroid-rk3588:12.0.0-latest
-            img_tg_name: cnflysky_redroid_rk3588_12_0_0_latest.tar.gz
-          - img_name: cnflysky/redroid-rk3588:lineage-20
-            img_tg_name: cnflysky_redroid_rk3588_lineage_20.tar.gz
+
           - img_name: mcr.microsoft.com/dotnet/aspnet:8.0.29
             img_tg_name: mcr_microsoft_com_dotnet_aspnet_8_0_29.tar.gz
     steps:
