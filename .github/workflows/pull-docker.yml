@@ -18,8 +18,8 @@ jobs:
       matrix:
         include:
 
-          - img_name: mcr.microsoft.com/dotnet/aspnet:8.0.29
-            img_tg_name: mcr_microsoft_com_dotnet_aspnet_8_0_29.tar.gz
+          - img_name: nginx:1.30.4-alpine
+            img_tg_name: nginx_1_30_4_alpine.tar.gz
     steps:
       - name: Checkout
         uses: actions/checkout@v4
